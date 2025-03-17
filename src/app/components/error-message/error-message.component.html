@@ -1,1 +1,8 @@
-<p>error-message works!</p>
+<div class="error">
+    <div class="d-flex align-items-center fade show" role="alert">
+        <div class="error-container text-center">
+            <img src="../../../assets/images/error-image.png" alt="Error" class="error-image">
+            <p class="error-text">{{ message }}</p>
+            <button (click)="reload()" class="btn btn-danger">Retry</button>
+          </div>
+  </div>

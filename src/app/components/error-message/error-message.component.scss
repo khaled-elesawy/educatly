@@ -1,0 +1,24 @@
+.error-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8d7da; /* Light red background */
+    border: 1px solid #dc3545; /* Bootstrap danger color */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .error-image {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .error-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #721c24; /* Darker red for readability */
+    margin-bottom: 15px;
+  }
+  
