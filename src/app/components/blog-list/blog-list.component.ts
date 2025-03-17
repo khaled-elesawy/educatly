@@ -24,7 +24,6 @@ export class BlogListComponent {
 
     this.blogService.getBlogPosts(this.currentPage).subscribe({
       next: (data) => {
-        console.log(data)
         this.blogs = data;
         this.loading = false;
       },
@@ -34,6 +33,10 @@ export class BlogListComponent {
       },
     });
 
+  }
+
+  redirectTo(postUrl: any){
+    window.open(postUrl, '_blank');
   }
 
   changePage(newPage: number) {

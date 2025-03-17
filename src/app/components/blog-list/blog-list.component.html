@@ -1,6 +1,6 @@
 <div class="blogs-list">
-  <div class="container">
-    <div class="header">
+  <div class="header">
+    <div class="container">
       <h1 class="title">Resources and insights</h1>
       <p class="description">
         The latest industry news, interviews, technologies, and resources.
@@ -13,32 +13,36 @@
         />
       </div>
     </div>
+  </div>
 
-    <div class="loader" *ngIf="loading">
-      <app-loading-indicator></app-loading-indicator>
-    </div>
+  <div class="loader" *ngIf="loading">
+    <app-loading-indicator></app-loading-indicator>
+  </div>
 
-    <div *ngIf="errorMessage">
-      <app-error-message [message]="errorMessage"></app-error-message>
-    </div>
+  <div *ngIf="errorMessage">
+    <app-error-message [message]="errorMessage"></app-error-message>
+  </div>
 
-    <div class="list" *ngIf="!loading && !errorMessage">
+  <div class="list" *ngIf="!loading && !errorMessage">
+    <div class="container">
       <div class="empty-data" *ngIf="blogs.length == 0">
         <p>there are no blog posts to show!</p>
         <div class="empty-data-image">
           <img src="../../../assets/images/no-data-image.png" alt="" />
         </div>
       </div>
-      <div class="blog-grid row">
-        <div class="col-md-4" *ngFor="let blog of blogs">
-          <app-blog-item [blog]="blog"></app-blog-item>
+      <div class="blog-grid row" *ngIf="blogs.length">
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let blog of blogs">
+          <app-blog-item
+            [blog]="blog"
+            (redirectedToPost)="redirectTo($event)"
+          ></app-blog-item>
         </div>
+        <app-pagination
+          [currentPage]="currentPage"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
       </div>
-
-      <app-pagination
-        [currentPage]="currentPage"
-        (pageChanged)="changePage($event)"
-      ></app-pagination>
     </div>
   </div>
 </div>

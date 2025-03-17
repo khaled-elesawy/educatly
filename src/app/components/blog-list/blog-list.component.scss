@@ -3,15 +3,19 @@ $main-color: rgba(105, 65, 198, 1);
 $header-color: rgba(66, 48, 125, 1);
 $black-color: rgba(16, 24, 40, 1);
 $gray-color: rgba(102, 112, 133, 1);
+$white-color: rgba(255, 255, 255, 1);
 
 
 .blogs-list {
-    // background-image: url('../../../assets/images/Background-pattern.png');
+    background: $background-color;
+    min-height: 100vh;
     .header {
-        padding: 40px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 72px 0;
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     
         .title{
             color: $header-color;
@@ -31,6 +35,15 @@ $gray-color: rgba(102, 112, 133, 1);
                 background: url('../../../assets/icons/magnifier.svg') no-repeat 10px center;
                 background-size: 16px;
                 padding-left: 35px; /* Space for the icon */
+                background-color: $white-color;
+            }
+        }
+        @media (max-width: 767px) {
+            .title, .description{
+                text-align: center;
+            }
+            .search{
+                width: 100%;
             }
         }
     }
@@ -39,6 +52,9 @@ $gray-color: rgba(102, 112, 133, 1);
         justify-content: center;
     }
     .list{
+        background: url(../../../assets/images/Background-pattern.png) no-repeat;
+        background-size: contain;
+
         .empty-data{
             color: $main-color;
             font-size: 20px;

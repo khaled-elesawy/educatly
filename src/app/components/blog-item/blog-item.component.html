@@ -1,1 +1,37 @@
-<p>blog-item works!</p>
+<div class="blog-item" *ngIf="blog">
+
+  <div class="blog-container">
+    <div class="cover-image">
+      <img *ngIf="blog?.cover_image"[src]="blog?.cover_image" alt="">
+      <div class="alternative-image" *ngIf="!blog?.cover_image">cover image</div>
+    </div>
+
+    <div class="category">
+      <span>{{ blog?.tags }}</span>
+    </div>
+
+    <div class="title-n-redirect">
+      <h3 class="title">{{ blog?.title }}</h3>
+      <div class="redirection" (click)="redirectToPostDetails(blog.canonical_url)">
+        <img src="../../../assets/icons/arrow-up-right.svg" alt="">
+      </div>
+    </div>
+
+    <div class="description">
+      <span>{{ blog?.description }}</span>
+    </div>
+
+
+    <div class="author">
+      <div class="profile-image">
+        <img class="author-image" [src]="blog?.user?.profile_image" alt="">
+      </div>
+      <div class="author-data">
+        <span class="author-name">{{ blog?.user?.name}}</span>
+        <span class="publish-date">{{ blog?.published_at | date: 'dd MMM yyyy' : 'UTC'}}</span>
+      </div>
+    </div>
+  </div>
+
+
+  </div>

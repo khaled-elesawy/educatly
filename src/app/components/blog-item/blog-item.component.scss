@@ -1,0 +1,120 @@
+$background-color: rgba(249, 245, 255, 1);
+$main-color: rgba(105, 65, 198, 1);
+$white-color: rgba(255, 255, 255, 1);
+$black-color: rgba(16, 24, 40, 1);
+$gray-color: rgba(102, 112, 133, 1);
+
+.blog-item {
+    background: $white-color;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 20px 0;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 580px;
+    margin-bottom: 30px;
+
+    .blog-container {
+        padding: 0 24px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .cover-image {
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                height: 240px;
+            }
+
+            .alternative-image {
+                width: 100%;
+                height: 240px;
+                color: rgb(105, 65, 198);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(105, 65, 198, 0.2);
+            }
+        }
+
+        .category {
+            font-size: 14px;
+            font-weight: 600;
+            color: $main-color;
+            padding: 24px 0;
+        }
+
+        .title-n-redirect {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 24px;
+
+            .title {
+                font-size: 24px;
+                font-weight: 600;
+                color: $black-color;
+                margin: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .redirection {
+                cursor: pointer;
+            }
+        }
+
+        .description {
+            font-size: 16px;
+            font-weight: 400;
+            color: $gray-color;
+            padding-bottom: 24px;
+
+            span {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+            }
+        }
+
+        .author {
+            display: flex;
+
+            .profile-image {
+                .author-image {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+
+            .author-data {
+                margin: 0 10px;
+                font-size: 14px;
+                display: flex;
+                flex-direction: column;
+
+                .author-name {
+                    font-weight: 500;
+                    color: $black-color;
+                }
+
+                .publish-date {
+                    font-weight: 400;
+                    color: $gray-color;
+                }
+            }
+        }
+    }
+}

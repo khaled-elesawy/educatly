@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-blog-item',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-item.component.scss']
 })
 export class BlogItemComponent {
+  @Input() blog: any;
+  @Output() redirectedToPost = new EventEmitter<string>();
 
+  redirectToPostDetails(postUrl: string){
+    this.redirectedToPost.emit(postUrl)
+  }
 }
