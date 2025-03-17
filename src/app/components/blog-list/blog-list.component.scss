@@ -1,0 +1,52 @@
+$background-color: rgba(249, 245, 255, 1);
+$main-color: rgba(105, 65, 198, 1);
+$header-color: rgba(66, 48, 125, 1);
+$black-color: rgba(16, 24, 40, 1);
+$gray-color: rgba(102, 112, 133, 1);
+
+
+.blogs-list {
+    // background-image: url('../../../assets/images/Background-pattern.png');
+    .header {
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .title{
+            color: $header-color;
+            font-size: 48px;
+            font-weight: 600;
+        }
+        .description{
+            color: $main-color;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 15px 0;
+        }
+        .search{
+            width: 30%;
+            margin: 15px 0;
+            .search-input {
+                background: url('../../../assets/icons/magnifier.svg') no-repeat 10px center;
+                background-size: 16px;
+                padding-left: 35px; /* Space for the icon */
+            }
+        }
+    }
+    .loader{
+        display: flex;
+        justify-content: center;
+    }
+    .list{
+        .empty-data{
+            color: $main-color;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

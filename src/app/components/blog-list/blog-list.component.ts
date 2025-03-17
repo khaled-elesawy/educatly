@@ -33,6 +33,12 @@ export class BlogListComponent {
         this.loading = false;
       },
     });
+
+  }
+
+  changePage(newPage: number) {
+    this.currentPage = newPage;
+    this.fetchBlogs();
   }
 
 }
